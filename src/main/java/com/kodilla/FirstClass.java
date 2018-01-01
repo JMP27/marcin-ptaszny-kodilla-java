@@ -1,6 +1,6 @@
 package com.kodilla;
 
-public class FirstClass {
+class FirstClass {
     String a = null;
     String b = null;
     String c = null;
