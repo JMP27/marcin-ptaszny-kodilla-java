@@ -38,8 +38,8 @@ public class KodillaLottoApplication {
 
         int b = 0;
 
-        for(Integer numbersEguals: numbers){
-            if(randomNumbersList.contains(numbersEguals)){
+        for(Integer numbersEquals: numbers){
+            if(randomNumbersList.contains(numbersEquals)){
                 b = b + 1;
             }
 
