@@ -22,7 +22,7 @@ public class KodillaLottoApplication {
         HashSet<Integer> numbers = new HashSet<>();
         HashSet<Integer> randomNumbersList = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the unqualified number: ");
+        System.out.print("Enter the unique number: ");
         while(numbers.size() < 6){
             boolean contains = false;
             contains = numbers.add(scanner.nextInt());
