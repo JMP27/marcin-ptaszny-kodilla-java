@@ -10,6 +10,7 @@ Losowanie lotto
 */
 package com.lotto;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
@@ -18,35 +19,45 @@ public class KodillaLottoApplication {
     public static void main(String args[]){
         Random randomNumbers = new Random();
 
-        LinkedList<Integer> numbers = new LinkedList<>();
-        LinkedList<Integer> randomNumbersList = new LinkedList<>();
+        HashSet<Integer> numbers = new HashSet<>();
+        HashSet<Integer> randomNumbersList = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the unqualified number: ");
+        while(numbers.size() < 6){
+            boolean contains = false;
+            contains = numbers.add(scanner.nextInt());
 
-        while(numbers.size() < 6) {
-            System.out.println("Podaj liczbe: ");
-            numbers.add(scanner.nextInt());
+                if ( contains ) {
+                    if(numbers.size() == 6){
+                        break;
+                    }
+                    System.out.print("Enter the next unique number: ");
+                } else {
+                    System.out.print("There is already such a number, Enter the next unique number: ");
+                }
+
+
        }
-
-        System.out.println(numbers);
 
         scanner.close();
 
-        while(randomNumbersList.size() < 6) {
+        while (randomNumbersList.size() < 6) {
             Integer a = randomNumbers.nextInt(49) + 1;
             randomNumbersList.add(a);
         }
 
         int b = 0;
-
         for(Integer numbersEquals: numbers){
             if(randomNumbersList.contains(numbersEquals)){
                 b = b + 1;
             }
-
         }
-        System.out.println(randomNumbersList);
-        System.out.println(b);
+
+        System.out.println("Numbers added by the user: " + numbers);
+        System.out.println("Numbers added by random function: " +randomNumbersList);
+        System.out.println("Number of repeating numbers : " + b);
 
 
     }
+
 }
