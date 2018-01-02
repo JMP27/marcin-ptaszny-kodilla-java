@@ -26,17 +26,15 @@ public class KodillaLottoApplication {
         while(numbers.size() < 6){
             boolean contains = false;
             contains = numbers.add(scanner.nextInt());
+                if(numbers.size() == 6){
+                  break;
+                }
 
-                if ( contains ) {
-                    if(numbers.size() == 6){
-                        break;
-                    }
+                if ( contains) {
                     System.out.print("Enter the next unique number: ");
                 } else {
                     System.out.print("There is already such a number, Enter the next unique number: ");
                 }
-
-
        }
 
         scanner.close();
