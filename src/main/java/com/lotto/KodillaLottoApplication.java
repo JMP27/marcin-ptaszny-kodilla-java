@@ -11,7 +11,6 @@ Losowanie lotto
 package com.lotto;
 
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
