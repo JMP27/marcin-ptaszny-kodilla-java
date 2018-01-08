@@ -8,6 +8,13 @@ Losowanie lotto
         2) wprowadzone liczby przez użytkownika powinny być unikalnie, odpowiednia wiadomość przy próbie wprowadzenie dwóch tych samych liczb
         3) wylosowane liczby powinny być unikalne
 */
+
+/*
+Celem zadania jest napisanie odpowiednich metod, aby sprawdzić ile losowań powinno się odbyć aby użytkownik trafił sześć liczb z sześciu wylosowanych.
+Liczby losowane przez komputer powinny być z zakresu 1-49.
+Liczby użytkownika mogą być wprowadzone ręcznie w kodzie, wprowadzone przez Scanner bądź wylosowane.
+
+ */
 package com.lotto;
 
 import java.util.HashSet;
