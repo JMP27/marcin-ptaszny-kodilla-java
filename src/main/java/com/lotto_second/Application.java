@@ -2,7 +2,7 @@
 Celem zadania jest napisanie odpowiednich metod, aby sprawdzić ile losowań powinno się odbyć aby użytkownik trafił sześć liczb z sześciu wylosowanych.
 Liczby losowane przez komputer powinny być z zakresu 1-49.
 Liczby użytkownika mogą być wprowadzone ręcznie w kodzie, wprowadzone przez Scanner bądź wylosowane.
-Wyświetlicz obie listy, zrobic historię 20 losowań;
+Wyświetl obie listy, zrobic historię 20 losowań;
 
  */
 
@@ -29,10 +29,13 @@ public class Application {
             history.add(k,j);
         }
         history.add(k,j);
+
     }
     System.out.println(numbersUser);
-
-    System.out.println(history);
+    System.out.println();
+    for(int u=0;u<20;u++) {
+        System.out.println("Mesurment Number " + u + " Number " + history.get(u));
+    }
 
     }
 
