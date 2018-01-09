@@ -9,6 +9,7 @@ Wyświetlicz obie listy, zrobic historię 20 losowań;
 package com.lotto_second;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -19,14 +20,19 @@ public class Application {
     int i = 0; //
     int j = 0;
     HashSet<Integer> numbersUser = los();
+    LinkedList<Integer> history = new LinkedList<>();
 
-    while(i < 6) {
-        i = numbersCheck(los(), numbersUser);
-        j++;
+    for(int k = 0 ; k < 4 ; k++) {
+        while (i < 6) {
+            i = numbersCheck(los(), numbersUser);
+            j++;
+            history.add(k,j);
+        }
+        history.add(k,j);
     }
     System.out.println(numbersUser);
 
-    System.out.print(j);
+    System.out.println(history);
 
     }
 
