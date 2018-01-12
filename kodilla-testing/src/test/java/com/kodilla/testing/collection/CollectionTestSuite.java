@@ -3,16 +3,10 @@ package com.kodilla.testing.collection;
 import org.junit.*;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-/* W utworzonym pakiecie stwórz klasę testową (zbiór testów) CollectionTestSuite,
-   a w niej napisz testy sprawdzające czy metoda filtrująca liczby nieparzyste działa poprawnie:
- * testOddNumbersExterminatorEmptyList (sprawdzi czy klasa zachowuje się poprawnie gdy lista jest pusta)
- * testOddNumbersExterminatorNormalList (sprawdzi czy klasa zachowuje się poprawnie
- * gdy lista zawiera liczby parzyste i nieparzyste)
- * Użyj również adnotacji @Before oraz @After, aby wyświetlić informację o tym, jakie operacje (testy) są aktualnie wykonywane.
-*/
 public class CollectionTestSuite {
+
+
     @Before
     public void before(){
         System.out.println("Test Case: begin");
@@ -23,26 +17,36 @@ public class CollectionTestSuite {
     }
 
     @Test
-    public void testOddNumbers() {
+    public void testOddNumbersExterminatorNormalList(){
+        ArrayList<Integer> numbers = new ArrayList<>();
         ArrayList<Integer> evenNumbers = new ArrayList<>();
-        ArrayList<Integer> losNumbers = new ArrayList<>();
 
-        Random randomNumbers = new Random();
-        int i = 0;
+        //Given
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        numbers.add(4);
+        numbers.add(8);
+        //When
+        evenNumbers.addAll(oddNumbersExterminator.exterminate(numbers));
+        System.out.println("Testing when collection have evenNumbers " + evenNumbers);
 
-        while(i<10) {
-            losNumbers.add(randomNumbers.nextInt(11) + 1);
-            i++;
-        }
+        //Then
+        Assert.assertEquals(evenNumbers, numbers);
+    }
 
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(evenNumbers,losNumbers);
+    @Test
+    public void testOddNumbersExterminatorEmptyList(){
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
 
-        evenNumbers = oddNumbersExterminator.exterminate(losNumbers);
+        //Given
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
+        //When
+        evenNumbers.addAll(oddNumbersExterminator.exterminate(numbers));
+        System.out.println("Testing when collection array is Null - ok");
 
-
-        System.out.println("Test Numbers: " + losNumbers);
-        System.out.println("Even Numbers: " + evenNumbers);
+        //Then
+        Assert.assertEquals(numbers, evenNumbers);
     }
 
 

@@ -12,19 +12,17 @@ import java.util.ArrayList;
 */
 public class OddNumbersExterminator {
 
-    ArrayList<Integer> evenNumbers = new ArrayList<>();
-    ArrayList<Integer> numbers = new ArrayList<>();
-
-    public OddNumbersExterminator(ArrayList<Integer> evenNumbers, ArrayList<Integer> numbers){
-        this.evenNumbers = evenNumbers;
-        this.numbers = numbers;
-    }
-
     public ArrayList<Integer> exterminate (ArrayList<Integer> numbers){
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
         for(int i=0 ; i<numbers.size();i++){
             int a = numbers.get(i);
             if(a%2 == 0){
                 evenNumbers.add(numbers.get(i));
+
+            }else{
+                oddNumbers.add(numbers.get(i));
+
             }
         }
         return evenNumbers;
