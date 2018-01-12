@@ -20,17 +20,26 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         ArrayList<Integer> numbers = new ArrayList<>();
         ArrayList<Integer> evenNumbers = new ArrayList<>();
+        ArrayList<Integer> expectedResult = new ArrayList<>();
 
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        numbers.add(4);
-        numbers.add(8);
+
+        for(int i = 1; i< 8; i++){
+            numbers.add(i);
+        }
+
+        expectedResult.add(2);
+        expectedResult.add(4);
+        expectedResult.add(7);
+
         //When
-        evenNumbers.addAll(oddNumbersExterminator.exterminate(numbers));
-        System.out.println("Testing when collection have evenNumbers " + evenNumbers);
+        evenNumbers = oddNumbersExterminator.exterminate(numbers);
+        System.out.println("Excepted numbers: " + expectedResult);
+        System.out.println("Even Numbers: " + evenNumbers);
 
         //Then
-        Assert.assertEquals(evenNumbers, numbers);
+        Assert.assertEquals(evenNumbers, expectedResult);
     }
 
     @Test
@@ -42,7 +51,7 @@ public class CollectionTestSuite {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
         //When
-        evenNumbers.addAll(oddNumbersExterminator.exterminate(numbers));
+        evenNumbers = oddNumbersExterminator.exterminate(numbers);
         System.out.println("Testing when collection array is Null - ok");
 
         //Then
