@@ -52,10 +52,9 @@ public class CollectionTestSuite {
 
         //When
         evenNumbers = oddNumbersExterminator.exterminate(numbers);
-        System.out.println("Testing when collection array is Null - ok");
 
         //Then
-        Assert.assertEquals(numbers, evenNumbers);
+        Assert.assertTrue(evenNumbers.isEmpty());
     }
 
 
