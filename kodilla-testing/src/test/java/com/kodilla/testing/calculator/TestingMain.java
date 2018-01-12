@@ -11,13 +11,20 @@ public class TestingMain {
     @Test
     public void add(){
     int a = calculator.add(2,2);
-    System.out.println(a);
+    if(a == 4) {
+        System.out.println("Test Add ok: " + a);
+    }
+
+
     }
 
     @Test
     public void sub(){
     int b = calculator.sub(4,2);
-    System.out.println(b);
+    if(b == 2){
+        System.out.println("Test Sub ok: " + b);
+    }
+
     }
 
 
