@@ -31,7 +31,7 @@ public class CollectionTestSuite {
 
         expectedResult.add(2);
         expectedResult.add(4);
-        expectedResult.add(7);
+        expectedResult.add(6);
 
         //When
         evenNumbers = oddNumbersExterminator.exterminate(numbers);
@@ -39,7 +39,7 @@ public class CollectionTestSuite {
         System.out.println("Even Numbers: " + evenNumbers);
 
         //Then
-        Assert.assertEquals(evenNumbers, expectedResult);
+        Assert.assertEquals(expectedResult,evenNumbers);
     }
 
     @Test
