@@ -19,13 +19,12 @@ public class ShapeCollector{
 
         public String showFigures(){
             String name = null;
-            int i = 0;
-            for(int j=0; j<figure.size();j++) {
-                Shape shape = figure.get(i);
-                System.out.println("Name figure: " + figure.get(i).getShapeName() + " Figure Field: " + figure.get(i).getField());
+            for(int j = 0; j<figure.size();j++) {
+                Shape shape = figure.get(j);
+                System.out.println("Name figure: " + figure.get(j).getShapeName() + " Figure Field: " + figure.get(j).getField());
                 name = shape.getShapeName();
-                return name;
+                //return name;
             }
-            return null;
+            return name;
         }
 }

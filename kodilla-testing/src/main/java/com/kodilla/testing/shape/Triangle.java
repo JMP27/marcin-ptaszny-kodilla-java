@@ -5,7 +5,7 @@ public class Triangle implements Shape{
     private int aVariable = 0;
     private int hVariable = 0;
 
-    public Triangle(String name, int aVariableVariable, int hVariable) {
+    public Triangle(String name, int aVariable, int hVariable) {
         this.name = name;
         this.aVariable = aVariable;
         this.hVariable = hVariable;
