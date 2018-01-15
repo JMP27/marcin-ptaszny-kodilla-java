@@ -71,13 +71,16 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape circle = new Circle("Circle", 10);
         Shape triangle = new Triangle("Triangle", 5, 3);
+        Shape square = new Square("Square", 5);
         shapeCollector.addFigure(circle);
         shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(square);
+
         //When
         shapeCollector.showFigures();
 
         //Then
-        Assert.assertEquals("Triangle", shapeCollector.showFigures());
+        Assert.assertEquals("CircleTriangleSquare", shapeCollector.showFigures());
     }
 
 }

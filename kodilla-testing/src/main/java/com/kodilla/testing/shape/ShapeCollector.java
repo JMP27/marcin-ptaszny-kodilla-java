@@ -18,11 +18,11 @@ public class ShapeCollector{
         }
 
         public String showFigures(){
-            String name = null;
+            String name = "";
             for(int j = 0; j<figure.size();j++) {
                 Shape shape = figure.get(j);
                 System.out.println("Name figure: " + figure.get(j).getShapeName() + " Figure Field: " + figure.get(j).getField());
-                name = shape.getShapeName();
+                name += shape.getShapeName();
                 //return name;
             }
             return name;
