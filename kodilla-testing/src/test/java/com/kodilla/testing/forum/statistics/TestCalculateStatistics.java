@@ -130,4 +130,57 @@ public class TestCalculateStatistics {
         Assert.assertEquals(100, calculateStatistics.users);
     }
 
+    @Test
+    public void testCalculateAdvStatisticsAverageCommentPerPost(){
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        int comments = 10;
+        int posts = 10;
+        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        when(statisticsMock.commentsCount()).thenReturn(comments);
+        when(statisticsMock.postsCount()).thenReturn(posts);
+
+        //When
+        calculateStatistics.calculateAdvStatistics();
+        int actual = calculateStatistics.avaregeCommentPerPost;
+        //Then
+        Assert.assertEquals(1, actual);
+    }
+
+    @Test
+    public void testCalculateAdvStatisticsAverageCommentPerUser(){
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        List<String> users = new ArrayList<>();
+        users.add("Marcin");
+        int comments = 1;
+        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        when(statisticsMock.commentsCount()).thenReturn(comments);
+        when(statisticsMock.usersNames()).thenReturn(users);
+
+        //When
+        calculateStatistics.calculateAdvStatistics();
+        int actual = calculateStatistics.avaregeCommentPerUser;
+        //Then
+        Assert.assertEquals(1, actual);
+    }
+
+    @Test
+    public void testCalculateAdvStatisticsAveragePostPerUser(){
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        List<String> users = new ArrayList<>();
+        users.add("Marcin");
+        int posts = 1;
+        CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
+        when(statisticsMock.postsCount()).thenReturn(posts);
+        when(statisticsMock.usersNames()).thenReturn(users);
+
+        //When
+        calculateStatistics.calculateAdvStatistics();
+        int actual = calculateStatistics.avaregePostPerUser;
+        //Then
+        Assert.assertEquals(1, actual);
+    }
+
 }
