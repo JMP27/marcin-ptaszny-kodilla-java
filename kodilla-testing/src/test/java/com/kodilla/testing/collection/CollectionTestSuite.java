@@ -1,11 +1,13 @@
 package com.kodilla.testing.collection;
 
+import javafx.beans.binding.When;
 import org.junit.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollectionTestSuite {
-
+    static int i = 0;
 
     @Before
     public void before(){
@@ -18,9 +20,9 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorNormalList(){
-        ArrayList<Integer> numbers = new ArrayList<>();
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
-        ArrayList<Integer> expectedResult = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
+
+        List<Integer> expectedResult = new ArrayList<>();
 
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
@@ -34,18 +36,19 @@ public class CollectionTestSuite {
         expectedResult.add(6);
 
         //When
-        evenNumbers = oddNumbersExterminator.exterminate(numbers);
+        List<Integer> evenNumbers = oddNumbersExterminator.exterminate(numbers);
         System.out.println("Excepted numbers: " + expectedResult);
         System.out.println("Even Numbers: " + evenNumbers);
 
         //Then
         Assert.assertEquals(expectedResult,evenNumbers);
+        i++;
     }
 
     @Test
     public void testOddNumbersExterminatorEmptyList(){
-        ArrayList<Integer> numbers = new ArrayList<>();
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
+        List<Integer> evenNumbers = new ArrayList<>();
 
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
@@ -55,7 +58,38 @@ public class CollectionTestSuite {
 
         //Then
         Assert.assertTrue(evenNumbers.isEmpty());
+        i++;
     }
 
+    @Test
+    public void testOneOddNumber(){
+
+        //Given
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(11);
+        //When
+        List<Integer> evenNumbers = oddNumbersExterminator.exterminate(numbers);
+        //Then
+        Assert.assertTrue(evenNumbers.isEmpty());
+        i++;
+    }
+
+    @Test
+    public void testOneEvenNumber(){
+
+        //Given
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        //When
+        List<Integer> evenNumbers = oddNumbersExterminator.exterminate(numbers);
+        //Then
+        Assert.assertEquals(1, evenNumbers.size());
+        int a = evenNumbers.get(0);
+        Assert.assertEquals(2, a);
+        i++;
+        System.out.println(i);
+    }
 
 }

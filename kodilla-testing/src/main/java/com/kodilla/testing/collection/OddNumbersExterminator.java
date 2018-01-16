@@ -3,6 +3,7 @@ package com.kodilla.testing.collection;
 import com.sun.xml.internal.xsom.impl.scd.Iterators;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*2. W utworzonym pakiecie stwórz klasę OddNumbersExterminator posiadającą
    metodę exterminate(ArrayList<Integer> numbers)
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 */
 public class OddNumbersExterminator {
 
-    public ArrayList<Integer> exterminate (ArrayList<Integer> numbers){
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
+    public List<Integer> exterminate (List<Integer> numbers){
+        List<Integer> evenNumbers = new ArrayList<>();
 
         for(int i=0 ; i<numbers.size();i++){
             int a = numbers.get(i);
