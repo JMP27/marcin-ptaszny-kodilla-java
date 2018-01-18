@@ -33,9 +33,11 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);*/
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Marcin", "!!!!" ,(text -> text));
-
-        poemBeautifier.beautifyToUpCase("Marcin", "aaa", text -> text);
+        String str = "Marcin";
+        String decor = " !!!";
+        poemBeautifier.beautify(str,(text) -> (text + decor).toUpperCase());
+        poemBeautifier.beautify(str ,(text) -> (text + decor).toLowerCase());
+        poemBeautifier.beautify(str, (text) -> (text + decor));
 
 
 
