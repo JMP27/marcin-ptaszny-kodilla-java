@@ -13,15 +13,8 @@ public final class ForumUser {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getRealName() {
         return realName;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
 }
