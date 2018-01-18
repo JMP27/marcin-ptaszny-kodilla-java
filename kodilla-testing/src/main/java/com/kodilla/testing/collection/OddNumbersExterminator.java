@@ -1,16 +1,9 @@
 package com.kodilla.testing.collection;
 
-import com.sun.xml.internal.xsom.impl.scd.Iterators;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/*2. W utworzonym pakiecie stwórz klasę OddNumbersExterminator posiadającą
-   metodę exterminate(ArrayList<Integer> numbers)
- * przyjmującą jako argument kolekcję ArrayList liczb typu Integer,
- * która zwraca również kolekcję ArrayList liczb typu Integer,
- * stanowiącą podzbiór kolekcji wejściowej z pominięciem liczb nieparzystych.
-*/
+
 public class OddNumbersExterminator {
 
     public List<Integer> exterminate (List<Integer> numbers){
