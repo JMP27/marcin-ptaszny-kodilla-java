@@ -16,9 +16,11 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        double result = firstChallenge.divide(3, 0);
-
-        System.out.println(result);
-
+        try {
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
+        } catch (ArithmeticException e){
+            System.out.println("Please do not divide from zero!!!");
+        };
     }
 }
