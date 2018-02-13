@@ -1,60 +1,50 @@
 package com.kodilla.good.patterns.challanges.food2door;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Product {
-    private final int id;
-    private final String name;
-    private final double price;
-    private final String productType;
 
-    public Product(int id, String name, double price, String productType) {
-        this.id = id;
+    private String name;
+    private BigDecimal price ;
+
+    public Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
-        this.productType = productType;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
-    }
-
-    public String getProductType() {
-        return productType;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Product)) return false;
+
         Product product = (Product) o;
-        return getId() == product.getId() &&
-                Double.compare(product.getPrice(), getPrice()) == 0 &&
-                Objects.equals(getName(), product.getName()) &&
-                Objects.equals(getProductType(), product.getProductType());
+
+        if (!name.equals(product.name)) return false;
+        return price.equals(product.price);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(getId(), getName(), getPrice(), getProductType());
+        int result = name.hashCode();
+        result = 31 * result + price.hashCode();
+        return result;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", price=" + price +
-                ", productType='" + productType + '\'' +
                 '}';
     }
+
 }
