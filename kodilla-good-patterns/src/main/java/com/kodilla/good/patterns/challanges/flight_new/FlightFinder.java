@@ -1,8 +1,5 @@
 package com.kodilla.good.patterns.challanges.flight_new;
 
-import com.kodilla.good.patterns.challanges.flight_new.Flight;
-import com.kodilla.good.patterns.challanges.flight_new.FlightDirectory;
-
 import java.util.Set;
 
 public class FlightFinder {
