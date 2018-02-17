@@ -12,6 +12,7 @@ public class GlutenFreeShop implements Shop{
         products.put(new Product("Bread", BigDecimal.ONE), 5);
         products.put(new Product("Cake", BigDecimal.TEN), 5);
         products.put(new Product("Toast", BigDecimal.TEN), 5);
+        products.put(new Product("Roll", BigDecimal.ONE), 5);
     }
 
     @Override

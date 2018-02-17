@@ -13,6 +13,7 @@ public class OrderRetriever {
         requests.add(new OrderRequest(healthy, new  Product("apple", BigDecimal.ONE), 1));
         requests.add(new OrderRequest(healthy, new Product("garlic", BigDecimal.TEN), 1));
         requests.add(new OrderRequest(glutenFree, new Product("Bread", BigDecimal.ONE), 1));
+        requests.add(new OrderRequest(glutenFree, new Product("Roll", BigDecimal.ONE), 1));
         return requests;
     }
 }
