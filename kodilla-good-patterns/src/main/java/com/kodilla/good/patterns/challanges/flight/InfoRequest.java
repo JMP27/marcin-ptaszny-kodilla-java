@@ -24,8 +24,7 @@ public final class InfoRequest {
     //     requires: from != null && to != null && via != null
     // travelDate has to be always not null
     public InfoRequest(final ConnectType conType, final Airport from, final Airport to, final Airport via,
-                       final LocalDate travelDate) {
-        validate(conType, from, to, via, travelDate);
+                       final LocalDate travelDate) { validate(conType, from, to, via, travelDate);
 
         this.conType = conType;
         this.from = from;
