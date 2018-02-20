@@ -2,6 +2,7 @@ package com.kodilla.good.patterns.challanges.order;
 
 public class OrderRequestRetriever {
     private OrderRequest request;
+    private int quanity;
 
 
     public OrderRequestRetriever() {
@@ -12,6 +13,6 @@ public class OrderRequestRetriever {
         request = new OrderRequest(user, product, 10);
     }
 
-    public OrderRequest retrieve() {
-        return request; }
+    public OrderRequest retrieve(User user, Product product) {
+        return request = new OrderRequest(user,product, quanity); }
 }

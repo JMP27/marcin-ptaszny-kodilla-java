@@ -2,13 +2,19 @@ package com.kodilla.good.patterns.challanges.order;
 
 public class Application {
     public static void main(String[] args) {
+        User user = new User(1, "Mar", "Pta", "NY Streat",
+                "mar.pta@gmail.com");
+        Product product = new Product(1, "Gra Diablo",
+                630);
+
         OrderRequestRetriever orr = new OrderRequestRetriever();
-        OrderRequest request = orr.retrieve();
+        OrderRequest request = orr.retrieve(user, product);
 
         OrderProcessor processor = new OrderProcessor(new MailService(),
                 new SimpleOrderService(), new InMemoryOrderRepository());
 
         OrderProcessResult result = processor.process(request);
+
         if (result == null) {
             printError("Order process failed for request: " + request);
             return;

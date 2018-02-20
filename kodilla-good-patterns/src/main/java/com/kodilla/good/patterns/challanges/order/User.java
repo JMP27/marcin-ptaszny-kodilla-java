@@ -9,14 +9,16 @@ public class User {
     private final String adress;
     private final String email;
 
-    public User(int id, String name, String surname, String adress, String email) {
-        validate (id,name,surname,adress,email);
+    public User(int id, String name, String surname, String address, String email) {
+        validate (id,name,surname,address,email);
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.adress = adress;
+        this.adress = address;
         this.email = email;
     }
+
+
 
     private void validate(int id, String name, String surname, String adress, String email){
         if (id <= 0) {
@@ -52,7 +54,7 @@ public class User {
         return surname;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return adress;
     }
 
@@ -68,14 +70,14 @@ public class User {
         return getId() == user.getId() &&
                 Objects.equals(getName(), user.getName()) &&
                 Objects.equals(getSurname(), user.getSurname()) &&
-                Objects.equals(getAdress(), user.getAdress()) &&
+                Objects.equals(getAddress(), user.getAddress()) &&
                 Objects.equals(getEmail(), user.getEmail());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getId(), getName(), getSurname(), getAdress(), getEmail());
+        return Objects.hash(getId(), getName(), getSurname(), getAddress(), getEmail());
     }
 
     @Override
