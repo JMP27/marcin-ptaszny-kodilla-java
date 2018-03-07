@@ -17,8 +17,6 @@ import java.math.BigDecimal;
 @SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
-    ProductDao productDao;
-    ItemDao itemDao;
     InvoiceDao invoiceDao;
 
     @Test
@@ -55,11 +53,11 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(2, size);
 
         //CleanUp
-        //try {
-        //    invoiceDao.delete(invoice);
-        //} catch (Exception e) {
+        try {
+            invoiceDao.delete(invoice);
+        } catch (Exception e) {
         //    do nothing
-        //}
+        }
 
     }
 }
