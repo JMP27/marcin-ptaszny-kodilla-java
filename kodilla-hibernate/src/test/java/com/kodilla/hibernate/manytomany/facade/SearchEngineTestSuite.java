@@ -35,7 +35,7 @@ public class SearchEngineTestSuite {
         int foundCompanyId = companyTesting.getId();
 
         // Then
-        Assert.assertNotEquals(0, searchService.searchCompaniesByName("%Testing...%").size());
+        Assert.assertNotEquals(0, searchService.searchCompaniesByName("Testing").size());
 
 
     }
@@ -52,7 +52,7 @@ public class SearchEngineTestSuite {
         int foundEmployeeID = johnTesting.getId();
 
         // Then
-        Assert.assertNotEquals(0, searchService.searchEmployeeByLastName("%sting...%").size());
+        Assert.assertNotEquals(0, searchService.searchEmployeeByLastName("sting").size());
 
     }
 }

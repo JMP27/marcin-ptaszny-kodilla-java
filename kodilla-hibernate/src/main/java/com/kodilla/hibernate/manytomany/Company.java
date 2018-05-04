@@ -21,7 +21,7 @@ import java.util.List;
 
         @NamedQuery(
                 name = "Company.searchCompanyByName",
-                query = "FROM Company WHERE name LIKE CONCAT(:SEARCHKEY, '%')"
+                query = "FROM Company WHERE name LIKE CONCAT('%', :SEARCHKEY, '%')"
         )
 })
 

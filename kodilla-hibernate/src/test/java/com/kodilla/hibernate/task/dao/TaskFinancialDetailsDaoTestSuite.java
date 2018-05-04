@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static sun.tools.jconsole.Messages.DESCRIPTION;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,30 +26,29 @@ public class TaskFinancialDetailsDaoTestSuite {
     public void testFindByPaid(){
         //Given
         TaskFinancialDetails taskFinancialDetails = new TaskFinancialDetails(new BigDecimal(115), false);
-        taskFinancialDetailsDao.save(taskFinancialDetails);
-        int id = taskFinancialDetails.getId();
+        TaskFinancialDetails save = taskFinancialDetailsDao.save(taskFinancialDetails);
 
         //When
         List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);
         //Then
-        Assert.assertEquals(4,resultList.size());
+        Assert.assertEquals(1,resultList.size());
 
         //CleanUp
-        //taskFinancialDetailsDao.delete(id);
+        taskFinancialDetailsDao.delete(save.getId());
     }
 
     @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
-        Task task = new Task(DESCRIPTION, 30);
+        Task task = new Task("TEST", 30);
         task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
         //When
-        taskDao.save(task);
-        int id = task.getId();
+        Task save = taskDao.save(task);
+
         //Then
-        Assert.assertEquals(23,id);
+        Assert.assertNotEquals(0,save.getId());
         //CleanUp
-        //taskDao.delete(id);
+        taskDao.delete(save.getId());
 
     }
 }

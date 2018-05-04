@@ -14,7 +14,7 @@ import java.util.List;
         ),
         @NamedQuery(
                 name = "Employee.searchEmployeeByLastName",
-                query = "FROM Employee WHERE lastName LIKE CONCAT(:SEARCHKEY, '%')"),
+                query = "FROM Employee WHERE lastName LIKE CONCAT('%' , :SEARCHKEY, '%')"),
 })
 
 @Entity
