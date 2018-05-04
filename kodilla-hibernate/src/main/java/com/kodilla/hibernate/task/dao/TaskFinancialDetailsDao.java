@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface TaskFinancialDetailsDao extends CrudRepository<TaskFinancialDetails, Integer> {
     List<TaskFinancialDetails> findByPaid(boolean paid);
+
+    //void delete( int id );
 }

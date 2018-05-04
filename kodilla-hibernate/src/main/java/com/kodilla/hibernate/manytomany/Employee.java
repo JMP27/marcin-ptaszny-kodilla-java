@@ -7,10 +7,15 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.retrieveLastname",
-        query = "FROM Employee WHERE lastname > :LASTNAME"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveLastname",
+                query = "FROM Employee WHERE LASTNAME > :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.searchEmployeeByLastName",
+                query = "FROM Employee WHERE lastName LIKE CONCAT(:SEARCHKEY, '%')"),
+})
 
 @Entity
 @Table(name = "EMPLOYEES")

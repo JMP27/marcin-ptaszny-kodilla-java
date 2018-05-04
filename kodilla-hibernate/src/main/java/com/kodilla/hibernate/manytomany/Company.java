@@ -18,14 +18,12 @@ import java.util.List;
                 name = "Company.retrieveCompanyName",
                 query = "FROM Company WHERE COMPANY_NAME LIKE 'DAT%'"
         ),
+
         @NamedQuery(
-                name = "Company.getForFragmentName",
-                query = "FROM Company WHERE COMPANY_NAME LIKE '%:ARG%'"
+                name = "Company.searchCompanyByName",
+                query = "FROM Company WHERE name LIKE CONCAT(:SEARCHKEY, '%')"
         )
 })
-// "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
-// "SELECT * FROM COMPANY WHERE NAME LIKE \"% DAT %\";",
-// "SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'"
 
 @Entity
 @Table(name = "COMPANIES")

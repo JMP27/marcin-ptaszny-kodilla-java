@@ -36,7 +36,7 @@ public class TaskFinancialDetailsDaoTestSuite {
         Assert.assertEquals(4,resultList.size());
 
         //CleanUp
-        taskFinancialDetailsDao.delete(id);
+        //taskFinancialDetailsDao.delete(id);
     }
 
     @Test
@@ -48,9 +48,9 @@ public class TaskFinancialDetailsDaoTestSuite {
         taskDao.save(task);
         int id = task.getId();
         //Then
-        Assert.assertEquals(5,id);
+        Assert.assertEquals(23,id);
         //CleanUp
-        taskDao.delete(id);
+        //taskDao.delete(id);
 
     }
 }

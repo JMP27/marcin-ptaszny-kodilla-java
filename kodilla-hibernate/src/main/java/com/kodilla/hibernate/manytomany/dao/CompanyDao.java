@@ -16,6 +16,7 @@ public interface CompanyDao extends CrudRepository<Company, Integer> {
     List<Company> retrieveCompanyName();
 
     @Query
-    List<Company> getForFragmentName(@Param("ARG") String arg);
+    List<Company> searchCompanyByName(@Param("SEARCHKEY") String searchKey);
+
 
 }
